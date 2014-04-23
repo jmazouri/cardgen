@@ -59,7 +59,7 @@ namespace CardGen
                 StringFormat descFormat = new StringFormat();
                 descFormat.Alignment = StringAlignment.Near;
                 descFormat.LineAlignment = StringAlignment.Near;
-                g.DrawString(Description, DescriptionFont, Brushes.White, new RectangleF(10, 160, 160, 70), descFormat);
+                g.DrawString(Description, DescriptionFont, Brushes.White, new RectangleF(10, 160, 160, 90), descFormat);
 
                 return b;
             }

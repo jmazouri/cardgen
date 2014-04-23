@@ -41,14 +41,17 @@
             this.label4 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.ArtPosX = new System.Windows.Forms.NumericUpDown();
-            this.ArtPosY = new System.Windows.Forms.NumericUpDown();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setTitleFontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setDescriptionFontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.ArtPosX = new System.Windows.Forms.NumericUpDown();
+            this.ArtPosY = new System.Windows.Forms.NumericUpDown();
             this.ImageScale = new System.Windows.Forms.NumericUpDown();
+            this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.ArtPositionSelector = new CardGen.PositionSelector();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.CardPreview)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ArtPosX)).BeginInit();
@@ -166,9 +169,34 @@
             // 
             // fileToolStripMenuItem
             // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exportToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.setTitleFontToolStripMenuItem,
+            this.setDescriptionFontToolStripMenuItem});
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // setTitleFontToolStripMenuItem
+            // 
+            this.setTitleFontToolStripMenuItem.Name = "setTitleFontToolStripMenuItem";
+            this.setTitleFontToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.setTitleFontToolStripMenuItem.Text = "Set Title Font";
+            this.setTitleFontToolStripMenuItem.Click += new System.EventHandler(this.setTitleFontToolStripMenuItem_Click);
+            // 
+            // setDescriptionFontToolStripMenuItem
+            // 
+            this.setDescriptionFontToolStripMenuItem.Name = "setDescriptionFontToolStripMenuItem";
+            this.setDescriptionFontToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.setDescriptionFontToolStripMenuItem.Text = "Set Description Font";
+            this.setDescriptionFontToolStripMenuItem.Click += new System.EventHandler(this.setDescriptionFontToolStripMenuItem_Click);
             // 
             // openFileDialog1
             // 
@@ -212,27 +240,6 @@
             this.ArtPosY.TabIndex = 14;
             this.ArtPosY.ValueChanged += new System.EventHandler(this.ArtPosY_ValueChanged);
             // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.setTitleFontToolStripMenuItem,
-            this.setDescriptionFontToolStripMenuItem});
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
-            this.editToolStripMenuItem.Text = "Edit";
-            // 
-            // setTitleFontToolStripMenuItem
-            // 
-            this.setTitleFontToolStripMenuItem.Name = "setTitleFontToolStripMenuItem";
-            this.setTitleFontToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.setTitleFontToolStripMenuItem.Text = "Set Title Font";
-            // 
-            // setDescriptionFontToolStripMenuItem
-            // 
-            this.setDescriptionFontToolStripMenuItem.Name = "setDescriptionFontToolStripMenuItem";
-            this.setDescriptionFontToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.setDescriptionFontToolStripMenuItem.Text = "Set Description Font";
-            // 
             // ImageScale
             // 
             this.ImageScale.DecimalPlaces = 2;
@@ -262,6 +269,13 @@
             65536});
             this.ImageScale.ValueChanged += new System.EventHandler(this.ImageScale_ValueChanged);
             // 
+            // exportToolStripMenuItem
+            // 
+            this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exportToolStripMenuItem.Text = "Export";
+            this.exportToolStripMenuItem.Click += new System.EventHandler(this.exportToolStripMenuItem_Click);
+            // 
             // ArtPositionSelector
             // 
             this.ArtPositionSelector.ExactPosition = new System.Drawing.Point(100, 50);
@@ -271,6 +285,10 @@
             this.ArtPositionSelector.Size = new System.Drawing.Size(120, 167);
             this.ArtPositionSelector.TabIndex = 12;
             this.ArtPositionSelector.OnChange += new CardGen.PositionSelector.myDataChangedDelegate(this.ArtPositionSelector_OnChange);
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.Filter = "PNG File|*.png|All files|*.*";
             // 
             // GeneratorForm
             // 
@@ -331,6 +349,9 @@
         private System.Windows.Forms.ToolStripMenuItem setTitleFontToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem setDescriptionFontToolStripMenuItem;
         private System.Windows.Forms.NumericUpDown ImageScale;
+        private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem;
+        private System.Windows.Forms.FontDialog fontDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 

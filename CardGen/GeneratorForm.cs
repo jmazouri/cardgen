@@ -13,6 +13,7 @@ namespace CardGen
     public partial class GeneratorForm : Form
     {
         public Card CurrentCard = new Card();
+        private Bitmap OriginalArt = new Bitmap(1, 1);
 
         public GeneratorForm()
         {
@@ -56,7 +57,8 @@ namespace CardGen
 
         private void ArtPath_TextChanged(object sender, EventArgs e)
         {
-            CurrentCard.Art = new Bitmap(ArtPath.Text);
+            OriginalArt = new Bitmap(ArtPath.Text);
+            CurrentCard.Art = OriginalArt;
             InfoChanged();
         }
 
@@ -70,12 +72,16 @@ namespace CardGen
         {
             try
             {
-                Bitmap original = new Bitmap(ArtPath.Text);
-                CurrentCard.Art = Util.ResizeBitmap(original, original.Width * ArtPositionSelector.ImageSize, original.Height * ArtPositionSelector.ImageSize);
+                if (System.IO.File.Exists(ArtPath.Text))
+                {
+                    CurrentCard.Art = Util.ResizeBitmap(OriginalArt, 
+                        OriginalArt.Width * ArtPositionSelector.ImageSize, 
+                        OriginalArt.Height * ArtPositionSelector.ImageSize);
+                }
             }
             catch (ArgumentException)
             {
-                MessageBox.Show("Load some card art first!");
+                
             }
         }
 
@@ -118,6 +124,41 @@ namespace CardGen
             ArtPositionSelector.ImageSize = (double)ImageScale.Value;
             UpdateArt();
             InfoChanged();
+        }
+
+        private void setTitleFontToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fontDialog1.Font = CurrentCard.NameFont;
+            if (fontDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                CurrentCard.NameFont = fontDialog1.Font;
+                InfoChanged();
+            }
+        }
+
+        private void setDescriptionFontToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fontDialog1.Font = CurrentCard.DescriptionFont;
+            if (fontDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                CurrentCard.DescriptionFont = fontDialog1.Font;
+                InfoChanged();
+            }
+        }
+
+        private void exportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                try
+                {
+                    CurrentCard.FullCard.Save(saveFileDialog1.FileName);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Could not export image! Try again.");
+                }
+            }
         }
     }
 }
