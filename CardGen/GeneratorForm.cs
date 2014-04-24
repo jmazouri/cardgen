@@ -79,9 +79,9 @@ namespace CardGen
                         OriginalArt.Height * ArtPositionSelector.ImageSize);
                 }
             }
-            catch (ArgumentException)
+            catch (Exception)
             {
-                
+                MessageBox.Show("Invalid Image");
             }
         }
 
