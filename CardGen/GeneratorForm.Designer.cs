@@ -41,14 +41,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.ArtPosX = new System.Windows.Forms.NumericUpDown();
-            this.ArtPosY = new System.Windows.Forms.NumericUpDown();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setTitleFontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setDescriptionFontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.ArtPosX = new System.Windows.Forms.NumericUpDown();
+            this.ArtPosY = new System.Windows.Forms.NumericUpDown();
             this.ImageScale = new System.Windows.Forms.NumericUpDown();
             this.ArtPositionSelector = new CardGen.PositionSelector();
+            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.batchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.CardPreview)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ArtPosX)).BeginInit();
@@ -157,7 +159,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.editToolStripMenuItem});
+            this.editToolStripMenuItem,
+            this.toolsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(534, 24);
@@ -169,6 +172,27 @@
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.setTitleFontToolStripMenuItem,
+            this.setDescriptionFontToolStripMenuItem});
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // setTitleFontToolStripMenuItem
+            // 
+            this.setTitleFontToolStripMenuItem.Name = "setTitleFontToolStripMenuItem";
+            this.setTitleFontToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.setTitleFontToolStripMenuItem.Text = "Set Title Font";
+            // 
+            // setDescriptionFontToolStripMenuItem
+            // 
+            this.setDescriptionFontToolStripMenuItem.Name = "setDescriptionFontToolStripMenuItem";
+            this.setDescriptionFontToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.setDescriptionFontToolStripMenuItem.Text = "Set Description Font";
             // 
             // openFileDialog1
             // 
@@ -212,27 +236,6 @@
             this.ArtPosY.TabIndex = 14;
             this.ArtPosY.ValueChanged += new System.EventHandler(this.ArtPosY_ValueChanged);
             // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.setTitleFontToolStripMenuItem,
-            this.setDescriptionFontToolStripMenuItem});
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
-            this.editToolStripMenuItem.Text = "Edit";
-            // 
-            // setTitleFontToolStripMenuItem
-            // 
-            this.setTitleFontToolStripMenuItem.Name = "setTitleFontToolStripMenuItem";
-            this.setTitleFontToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.setTitleFontToolStripMenuItem.Text = "Set Title Font";
-            // 
-            // setDescriptionFontToolStripMenuItem
-            // 
-            this.setDescriptionFontToolStripMenuItem.Name = "setDescriptionFontToolStripMenuItem";
-            this.setDescriptionFontToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.setDescriptionFontToolStripMenuItem.Text = "Set Description Font";
-            // 
             // ImageScale
             // 
             this.ImageScale.DecimalPlaces = 2;
@@ -271,6 +274,21 @@
             this.ArtPositionSelector.Size = new System.Drawing.Size(120, 167);
             this.ArtPositionSelector.TabIndex = 12;
             this.ArtPositionSelector.OnChange += new CardGen.PositionSelector.myDataChangedDelegate(this.ArtPositionSelector_OnChange);
+            // 
+            // toolsToolStripMenuItem
+            // 
+            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.batchToolStripMenuItem});
+            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.toolsToolStripMenuItem.Text = "Tools";
+            // 
+            // batchToolStripMenuItem
+            // 
+            this.batchToolStripMenuItem.Name = "batchToolStripMenuItem";
+            this.batchToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.batchToolStripMenuItem.Text = "Batch";
+            this.batchToolStripMenuItem.Click += new System.EventHandler(this.batchToolStripMenuItem_Click);
             // 
             // GeneratorForm
             // 
@@ -331,6 +349,8 @@
         private System.Windows.Forms.ToolStripMenuItem setTitleFontToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem setDescriptionFontToolStripMenuItem;
         private System.Windows.Forms.NumericUpDown ImageScale;
+        private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem batchToolStripMenuItem;
     }
 }
 

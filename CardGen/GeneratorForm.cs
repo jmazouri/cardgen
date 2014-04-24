@@ -119,5 +119,10 @@ namespace CardGen
             UpdateArt();
             InfoChanged();
         }
+
+        private void batchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
