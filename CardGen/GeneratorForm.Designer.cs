@@ -50,8 +50,8 @@
             this.ImageScale = new System.Windows.Forms.NumericUpDown();
             this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
-            this.ArtPositionSelector = new CardGen.PositionSelector();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.ArtPositionSelector = new CardGen.PositionSelector();
             ((System.ComponentModel.ISupportInitialize)(this.CardPreview)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ArtPosX)).BeginInit();
@@ -272,23 +272,23 @@
             // exportToolStripMenuItem
             // 
             this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exportToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.exportToolStripMenuItem.Text = "Export";
             this.exportToolStripMenuItem.Click += new System.EventHandler(this.exportToolStripMenuItem_Click);
             // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.Filter = "PNG File|*.png|All files|*.*";
+            // 
             // ArtPositionSelector
             // 
-            this.ArtPositionSelector.ExactPosition = new System.Drawing.Point(100, 50);
+            this.ArtPositionSelector.ExactPosition = new System.Drawing.Point(55, 70);
             this.ArtPositionSelector.ImageSize = 1D;
             this.ArtPositionSelector.Location = new System.Drawing.Point(216, 160);
             this.ArtPositionSelector.Name = "ArtPositionSelector";
             this.ArtPositionSelector.Size = new System.Drawing.Size(120, 167);
             this.ArtPositionSelector.TabIndex = 12;
             this.ArtPositionSelector.OnChange += new CardGen.PositionSelector.myDataChangedDelegate(this.ArtPositionSelector_OnChange);
-            // 
-            // saveFileDialog1
-            // 
-            this.saveFileDialog1.Filter = "PNG File|*.png|All files|*.*";
             // 
             // GeneratorForm
             // 

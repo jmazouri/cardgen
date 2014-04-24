@@ -42,16 +42,14 @@ namespace CardGen
             }
         }
 
-
-
-        public double Scale = 1.5;
+        public double PositionScale = 1.5;
 
         public Point Position
         {
             get
             {
-                int newx = (int)Math.Round(((double)ExactPosition.X) * Scale);
-                int newy = (int)Math.Round(((double)ExactPosition.Y) * Scale);
+                int newx = (int)Math.Round(((double)ExactPosition.X) * PositionScale);
+                int newy = (int)Math.Round(((double)ExactPosition.Y) * PositionScale);
 
                 return new Point(newx, newy);
             }
