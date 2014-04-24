@@ -48,10 +48,9 @@
             this.ArtPosX = new System.Windows.Forms.NumericUpDown();
             this.ArtPosY = new System.Windows.Forms.NumericUpDown();
             this.ImageScale = new System.Windows.Forms.NumericUpDown();
-            this.exportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fontDialog1 = new System.Windows.Forms.FontDialog();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.ArtPositionSelector = new CardGen.PositionSelector();
+            this.toolsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.batchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.CardPreview)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ArtPosX)).BeginInit();
@@ -160,7 +159,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.editToolStripMenuItem});
+            this.editToolStripMenuItem,
+            this.toolsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(534, 24);
@@ -169,8 +169,6 @@
             // 
             // fileToolStripMenuItem
             // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exportToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -189,14 +187,12 @@
             this.setTitleFontToolStripMenuItem.Name = "setTitleFontToolStripMenuItem";
             this.setTitleFontToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.setTitleFontToolStripMenuItem.Text = "Set Title Font";
-            this.setTitleFontToolStripMenuItem.Click += new System.EventHandler(this.setTitleFontToolStripMenuItem_Click);
             // 
             // setDescriptionFontToolStripMenuItem
             // 
             this.setDescriptionFontToolStripMenuItem.Name = "setDescriptionFontToolStripMenuItem";
             this.setDescriptionFontToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.setDescriptionFontToolStripMenuItem.Text = "Set Description Font";
-            this.setDescriptionFontToolStripMenuItem.Click += new System.EventHandler(this.setDescriptionFontToolStripMenuItem_Click);
             // 
             // openFileDialog1
             // 
@@ -269,26 +265,30 @@
             65536});
             this.ImageScale.ValueChanged += new System.EventHandler(this.ImageScale_ValueChanged);
             // 
-            // exportToolStripMenuItem
-            // 
-            this.exportToolStripMenuItem.Name = "exportToolStripMenuItem";
-            this.exportToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            this.exportToolStripMenuItem.Text = "Export";
-            this.exportToolStripMenuItem.Click += new System.EventHandler(this.exportToolStripMenuItem_Click);
-            // 
-            // saveFileDialog1
-            // 
-            this.saveFileDialog1.Filter = "PNG File|*.png|All files|*.*";
-            // 
             // ArtPositionSelector
             // 
-            this.ArtPositionSelector.ExactPosition = new System.Drawing.Point(55, 70);
+            this.ArtPositionSelector.ExactPosition = new System.Drawing.Point(100, 50);
             this.ArtPositionSelector.ImageSize = 1D;
             this.ArtPositionSelector.Location = new System.Drawing.Point(216, 160);
             this.ArtPositionSelector.Name = "ArtPositionSelector";
             this.ArtPositionSelector.Size = new System.Drawing.Size(120, 167);
             this.ArtPositionSelector.TabIndex = 12;
             this.ArtPositionSelector.OnChange += new CardGen.PositionSelector.myDataChangedDelegate(this.ArtPositionSelector_OnChange);
+            // 
+            // toolsToolStripMenuItem
+            // 
+            this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.batchToolStripMenuItem});
+            this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.toolsToolStripMenuItem.Text = "Tools";
+            // 
+            // batchToolStripMenuItem
+            // 
+            this.batchToolStripMenuItem.Name = "batchToolStripMenuItem";
+            this.batchToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.batchToolStripMenuItem.Text = "Batch";
+            this.batchToolStripMenuItem.Click += new System.EventHandler(this.batchToolStripMenuItem_Click);
             // 
             // GeneratorForm
             // 
@@ -349,9 +349,8 @@
         private System.Windows.Forms.ToolStripMenuItem setTitleFontToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem setDescriptionFontToolStripMenuItem;
         private System.Windows.Forms.NumericUpDown ImageScale;
-        private System.Windows.Forms.ToolStripMenuItem exportToolStripMenuItem;
-        private System.Windows.Forms.FontDialog fontDialog1;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.ToolStripMenuItem toolsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem batchToolStripMenuItem;
     }
 }
 

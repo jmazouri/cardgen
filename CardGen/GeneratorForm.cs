@@ -160,5 +160,10 @@ namespace CardGen
                 }
             }
         }
+
+        private void batchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
