@@ -42,7 +42,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listView1.Location = new System.Drawing.Point(12, 12);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(250, 512);
+            this.listView1.Size = new System.Drawing.Size(232, 518);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -50,7 +50,7 @@
             // CardPreview
             // 
             this.CardPreview.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CardPreview.Location = new System.Drawing.Point(268, 12);
+            this.CardPreview.Location = new System.Drawing.Point(281, 12);
             this.CardPreview.Name = "CardPreview";
             this.CardPreview.Size = new System.Drawing.Size(180, 250);
             this.CardPreview.TabIndex = 1;
@@ -58,32 +58,41 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(268, 268);
+            this.comboBox1.Items.AddRange(new object[] {
+            "Google Spreadsheet"});
+            this.comboBox1.Location = new System.Drawing.Point(250, 268);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(180, 21);
+            this.comboBox1.Size = new System.Drawing.Size(242, 21);
             this.comboBox1.TabIndex = 2;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // propertyGrid1
             // 
-            this.propertyGrid1.Location = new System.Drawing.Point(268, 295);
+            this.propertyGrid1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.propertyGrid1.Location = new System.Drawing.Point(250, 295);
             this.propertyGrid1.Name = "propertyGrid1";
-            this.propertyGrid1.Size = new System.Drawing.Size(180, 229);
+            this.propertyGrid1.PropertySort = System.Windows.Forms.PropertySort.NoSort;
+            this.propertyGrid1.Size = new System.Drawing.Size(242, 235);
             this.propertyGrid1.TabIndex = 3;
+            this.propertyGrid1.ToolbarVisible = false;
             // 
             // BatchProcessor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(460, 536);
+            this.ClientSize = new System.Drawing.Size(504, 542);
             this.Controls.Add(this.propertyGrid1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.CardPreview);
             this.Controls.Add(this.listView1);
-            this.MinimumSize = new System.Drawing.Size(476, 336);
+            this.MinimumSize = new System.Drawing.Size(476, 581);
             this.Name = "BatchProcessor";
-            this.Text = "BatchProcessor";
+            this.Text = "Batch Processor";
+            this.Load += new System.EventHandler(this.BatchProcessor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CardPreview)).EndInit();
             this.ResumeLayout(false);
 

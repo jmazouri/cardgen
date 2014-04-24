@@ -10,6 +10,7 @@ namespace CardGen
     public class GoogleSpreadsheetImportSettings
     {
         [DisplayName("Username")]
+        
         [Description("The username for a google account with access to the spreadsheet.")]
         public string Username { get; set; }
 
@@ -21,5 +22,12 @@ namespace CardGen
         [DisplayName("Spreadsheet ID")]
         [Description("ID taken from the URL of the spreadsheet.")]
         public string SheetID { get; set; }
+
+        public GoogleSpreadsheetImportSettings()
+        {
+            Username = "";
+            Password = "";
+            SheetID = "";
+        }
     }
 }
