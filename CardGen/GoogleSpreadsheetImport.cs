@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using GDataDB;
 using GDataDB.Linq;
 
@@ -16,7 +12,7 @@ namespace CardGen
 
             var client = new DatabaseClient(settings.Username, settings.Password);
 
-            var db = client.GetDatabase(settings.SheetID);
+            var db = client.GetDatabase(settings.SheetId);
             var t = db.GetTable<Card>("Sheet1");
 
             return ret;

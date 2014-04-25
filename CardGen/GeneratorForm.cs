@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CardGen
@@ -30,7 +24,7 @@ namespace CardGen
         
         private void InfoChanged()
         {
-            CardPreview.Image = (Image)CurrentCard.FullCard;
+            CardPreview.Image = CurrentCard.FullCard;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -74,9 +68,9 @@ namespace CardGen
             {
                 if (System.IO.File.Exists(ArtPath.Text))
                 {
-                    CurrentCard.Art = Util.ResizeBitmap(OriginalArt, 
-                        OriginalArt.Width * ArtPositionSelector.ImageSize, 
-                        OriginalArt.Height * ArtPositionSelector.ImageSize);
+                    CurrentCard.Art = Util.ResizeBitmap(OriginalArt,
+                        OriginalArt.Width * (int)(Math.Round(ArtPositionSelector.ImageSize)), 
+                        OriginalArt.Height * (int)(Math.Round(ArtPositionSelector.ImageSize)));
                 }
             }
             catch (Exception)
@@ -163,7 +157,7 @@ namespace CardGen
 
         private void batchToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BatchProcessor processor = new BatchProcessor();
+            var processor = new BatchProcessor();
             processor.Show();
         }
 
@@ -171,7 +165,7 @@ namespace CardGen
         {
             fontDialog1.Font = CurrentCard.NameFont;
 
-            if (fontDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (fontDialog1.ShowDialog() == DialogResult.OK)
             {
                 CurrentCard.NameFont = fontDialog1.Font;
             }
@@ -181,7 +175,7 @@ namespace CardGen
         {
             fontDialog1.Font = CurrentCard.DescriptionFont;
 
-            if (fontDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (fontDialog1.ShowDialog() == DialogResult.OK)
             {
                 CurrentCard.DescriptionFont = fontDialog1.Font;
             }

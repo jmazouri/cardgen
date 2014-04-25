@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Drawing;
+﻿using System.Drawing;
 using System.Drawing.Imaging;
 
 namespace CardGen
@@ -34,8 +29,8 @@ namespace CardGen
         {
             get
             {
-                Bitmap b = new Bitmap(180, 250);
-                Graphics g = Graphics.FromImage(b);
+                var b = new Bitmap(180, 250);
+                var g = Graphics.FromImage(b);
 
                 Art.MakeTransparent();
                 Front.MakeTransparent();
@@ -45,20 +40,24 @@ namespace CardGen
 
                 g.FillRectangle(Brushes.Black, new Rectangle(0, 0, 180, 250));
 
-                ImageAttributes att = new ImageAttributes();
+                var att = new ImageAttributes();
 
                 g.DrawImage(Art, ArtPos.X, ArtPos.Y, Art.Width, Art.Height);
 
                 g.DrawImage(Front, 0, 0, 180, 250);
 
-                StringFormat titleFormat = new StringFormat();
-                titleFormat.Alignment = StringAlignment.Center;
-                titleFormat.LineAlignment = StringAlignment.Near;
+                var titleFormat = new StringFormat
+                {
+                    Alignment = StringAlignment.Center,
+                    LineAlignment = StringAlignment.Near
+                };
                 g.DrawString(Name, NameFont, Brushes.White, new RectangleF(10, 10, 160, 230), titleFormat);
 
-                StringFormat descFormat = new StringFormat();
-                descFormat.Alignment = StringAlignment.Near;
-                descFormat.LineAlignment = StringAlignment.Near;
+                var descFormat = new StringFormat
+                {
+                    Alignment = StringAlignment.Near,
+                    LineAlignment = StringAlignment.Near
+                };
                 g.DrawString(Description, DescriptionFont, Brushes.White, new RectangleF(10, 160, 160, 90), descFormat);
 
                 return b;
