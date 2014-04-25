@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 
 namespace CardGen
 {
@@ -21,13 +16,13 @@ namespace CardGen
 
         [DisplayName("Spreadsheet ID")]
         [Description("ID taken from the URL of the spreadsheet.")]
-        public string SheetID { get; set; }
+        public string SheetId { get; set; }
 
         public GoogleSpreadsheetImportSettings()
         {
             Username = "";
             Password = "";
-            SheetID = "";
+            SheetId = "";
         }
     }
 }
