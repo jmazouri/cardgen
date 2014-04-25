@@ -12,14 +12,11 @@ namespace CardGen
     {
         public static List<Card> Import(GoogleSpreadsheetImportSettings settings)
         {
-            List<Card> ret = new List<Card>();
-
             var client = new DatabaseClient(settings.Username, settings.Password);
 
             var db = client.GetDatabase(settings.SheetID);
             var t = db.GetTable<Card>("Sheet1");
-
-            return ret;
+            return t.FindAll().Select(d=>d.Element).ToList();
         }
     }
 }

@@ -64,7 +64,7 @@ namespace CardGen
 
         private void OverlayPath_TextChanged(object sender, EventArgs e)
         {
-            CurrentCard.Front = new Bitmap(OverlayPath.Text);
+            CurrentCard.Settings.Front = new Bitmap(OverlayPath.Text);
             InfoChanged();
         }
         
@@ -128,20 +128,20 @@ namespace CardGen
 
         private void setTitleFontToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fontDialog1.Font = CurrentCard.NameFont;
+            fontDialog1.Font = CurrentCard.Settings.NameFont;
             if (fontDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                CurrentCard.NameFont = fontDialog1.Font;
+                CurrentCard.Settings.NameFont = fontDialog1.Font;
                 InfoChanged();
             }
         }
 
         private void setDescriptionFontToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            fontDialog1.Font = CurrentCard.DescriptionFont;
+            fontDialog1.Font = CurrentCard.Settings.DescriptionFont;
             if (fontDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                CurrentCard.DescriptionFont = fontDialog1.Font;
+                CurrentCard.Settings.DescriptionFont = fontDialog1.Font;
                 InfoChanged();
             }
         }
@@ -169,21 +169,21 @@ namespace CardGen
 
         private void setTitleFontToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            fontDialog1.Font = CurrentCard.NameFont;
+            fontDialog1.Font = CurrentCard.Settings.NameFont;
 
             if (fontDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                CurrentCard.NameFont = fontDialog1.Font;
+                CurrentCard.Settings.NameFont = fontDialog1.Font;
             }
         }
 
         private void setDescriptionFontToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            fontDialog1.Font = CurrentCard.DescriptionFont;
+            fontDialog1.Font = CurrentCard.Settings.DescriptionFont;
 
             if (fontDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                CurrentCard.DescriptionFont = fontDialog1.Font;
+                CurrentCard.Settings.DescriptionFont = fontDialog1.Font;
             }
         }
     }
