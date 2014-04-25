@@ -19,8 +19,8 @@ namespace CardGen
         [PasswordPropertyText(true)]
         public string Password { get; set; }
 
-        [DisplayName("Spreadsheet Name")]
-        [Description("Exact name of the spreadsheet.")]
+        [DisplayName("Spreadsheet ID")]
+        [Description("ID taken from the URL of the spreadsheet.")]
         public string SheetID { get; set; }
 
         public GoogleSpreadsheetImportSettings()
