@@ -188,7 +188,7 @@
             // 
             this.setTitleFontToolStripMenuItem.Name = "setTitleFontToolStripMenuItem";
             this.setTitleFontToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.setTitleFontToolStripMenuItem.Text = "Set Title Font";
+            this.setTitleFontToolStripMenuItem.Text = "Set Name Font";
             this.setTitleFontToolStripMenuItem.Click += new System.EventHandler(this.setTitleFontToolStripMenuItem_Click_1);
             // 
             // setDescriptionFontToolStripMenuItem
@@ -209,7 +209,7 @@
             // batchToolStripMenuItem
             // 
             this.batchToolStripMenuItem.Name = "batchToolStripMenuItem";
-            this.batchToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.batchToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
             this.batchToolStripMenuItem.Text = "Batch";
             this.batchToolStripMenuItem.Click += new System.EventHandler(this.batchToolStripMenuItem_Click);
             // 

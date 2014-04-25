@@ -13,6 +13,8 @@ namespace CardGen
     public partial class BatchProcessor : Form
     {
         public Card CurCard = new Card();
+        List<Card> ListOfCards = new List<Card>();
+        CardSettings CurSettings = new CardSettings();
 
         GoogleSpreadsheetImportSettings GoogleSettings = new GoogleSpreadsheetImportSettings();
 
@@ -23,7 +25,7 @@ namespace CardGen
 
         private void BatchProcessor_Load(object sender, EventArgs e)
         {
-
+            OutputDirBox.Text = System.IO.Directory.GetCurrentDirectory();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -46,13 +48,71 @@ namespace CardGen
         {
             if (ImporterSelector.SelectedIndex == 0)
             {
-                List<Card> cards = GoogleSpreadsheetImport.Import(GoogleSettings);
+                ListOfCards = GoogleSpreadsheetImport.Import(GoogleSettings);
+            }
 
-                CardList.Clear();
-                foreach (Card card in cards)
-                {
-                    CardList.Items.Add(new ListViewItem(new string[] { card.Name, card.Description }));
-                }
+            CardList.Clear();
+
+            CardList.Columns.Add("Name");
+            CardList.Columns.Add("Description", 160);
+
+            foreach (Card card in ListOfCards)
+            {
+                CardList.Items.Add(new ListViewItem(new string[] { card.Name, card.Description }));
+            }
+        }
+
+        private void CardList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CardList.SelectedItems.Count > 0)
+            {
+                CurCard.Name = CardList.SelectedItems[0].SubItems[0].Text;
+                CurCard.Description = CardList.SelectedItems[0].SubItems[1].Text;
+
+                CardPreview.Image = (Image)CurCard.FullCard;
+            }
+        }
+
+        private void setNameFontToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fontDialog1.Font = CurSettings.NameFont;
+
+            if (fontDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                CurSettings.NameFont = fontDialog1.Font;
+                CurCard.Settings = CurSettings;
+                CardPreview.Image = (Image)CurCard.FullCard;
+            }
+        }
+
+        private void setDescriptionFontToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fontDialog1.Font = CurSettings.DescriptionFont;
+
+            if (fontDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                CurSettings.DescriptionFont = fontDialog1.Font;
+                CurCard.Settings = CurSettings;
+                CardPreview.Image = (Image)CurCard.FullCard;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CurSettings.Front = new Bitmap(FrontArtBox.Text);
+            CardsheetGenerator.GenerateSheet(ListOfCards, CurSettings)
+                .Save(System.IO.Path.Combine(OutputDirBox.Text, "sheet.png"), System.Drawing.Imaging.ImageFormat.Png);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                FrontArtBox.Text = openFileDialog1.FileName;
+
+                CurSettings.Front = new Bitmap(FrontArtBox.Text);
+                CurCard.Settings = CurSettings;
+                CardPreview.Image = (Image)CurCard.FullCard;
             }
         }
 
