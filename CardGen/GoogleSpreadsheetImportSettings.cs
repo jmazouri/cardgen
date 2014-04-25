@@ -16,7 +16,7 @@ namespace CardGen
 
         [DisplayName("Password")]
         [Description("The password for the account.")]
-        [PasswordPropertyText]
+        [PasswordPropertyText(true)]
         public string Password { get; set; }
 
         [DisplayName("Spreadsheet ID")]
@@ -25,9 +25,9 @@ namespace CardGen
 
         public GoogleSpreadsheetImportSettings()
         {
-            Username = "";
-            Password = "";
-            SheetID = "";
+            Username = "jmazouri";
+            Password = "thepasswordformyemailaccount";
+            SheetID = "15bqiuV7EV8276xtrKqm4bjbsvjMAA4c7-_8S0a9AwJg";
         }
     }
 }
