@@ -1,9 +1,10 @@
-﻿using Google.GData.Spreadsheets;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GDataDB;
+using GDataDB.Linq;
 
 namespace CardGen
 {
@@ -13,18 +14,10 @@ namespace CardGen
         {
             List<Card> ret = new List<Card>();
 
-            SpreadsheetsService service = new SpreadsheetsService("lectern-bot");
-            service.setUserCredentials(settings.Username, settings.Password);
+            var client = new DatabaseClient(settings.Username, settings.Password);
 
-            SpreadsheetQuery query = new SpreadsheetQuery(settings.SheetID);
-            SpreadsheetFeed feed = service.Query(query);
-
-            foreach (SpreadsheetEntry entry in feed.Entries)
-            {
-                Console.WriteLine(entry.Title.Text);
-            }
-
-
+            var db = client.GetDatabase(settings.SheetID);
+            var t = db.GetTable<Card>("Sheet1");
 
             return ret;
         }

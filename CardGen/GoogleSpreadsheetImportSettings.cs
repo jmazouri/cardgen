@@ -16,7 +16,7 @@ namespace CardGen
 
         [DisplayName("Password")]
         [Description("The password for the account.")]
-        [PasswordPropertyText]
+        [PasswordPropertyText(true)]
         public string Password { get; set; }
 
         [DisplayName("Spreadsheet ID")]

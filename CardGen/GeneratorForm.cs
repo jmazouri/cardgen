@@ -166,5 +166,25 @@ namespace CardGen
             BatchProcessor processor = new BatchProcessor();
             processor.Show();
         }
+
+        private void setTitleFontToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            fontDialog1.Font = CurrentCard.NameFont;
+
+            if (fontDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                CurrentCard.NameFont = fontDialog1.Font;
+            }
+        }
+
+        private void setDescriptionFontToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            fontDialog1.Font = CurrentCard.DescriptionFont;
+
+            if (fontDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                CurrentCard.DescriptionFont = fontDialog1.Font;
+            }
+        }
     }
 }
