@@ -16,7 +16,7 @@ namespace CardGen
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GeneratorForm());
+            Application.Run(new BatchProcessor());
         }
     }
 }

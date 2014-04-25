@@ -28,9 +28,31 @@ namespace CardGen
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedIndex == 0)
+            if (ImporterSelector.SelectedIndex == 0)
             {
-                propertyGrid1.SelectedObject = GoogleSettings;
+                ImporterSettings.SelectedObject = GoogleSettings;
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
+            {
+                OutputDirBox.Text = folderBrowserDialog1.SelectedPath;
+            }
+        }
+
+        private void DoImport_Click(object sender, EventArgs e)
+        {
+            if (ImporterSelector.SelectedIndex == 0)
+            {
+                List<Card> cards = GoogleSpreadsheetImport.Import(GoogleSettings);
+
+                CardList.Clear();
+                foreach (Card card in cards)
+                {
+                    CardList.Items.Add(new ListViewItem(new string[] { card.Name, card.Description }));
+                }
             }
         }
 
