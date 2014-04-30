@@ -20,14 +20,19 @@ namespace CardGen
         public string Password { get; set; }
 
         [DisplayName("Spreadsheet Name")]
-        [Description("Exact name of the spreadsheet.")]
+        [Description("Exact title of the spreadsheet document.")]
         public string SheetID { get; set; }
+
+        [DisplayName("Tab Name")]
+        [Description("Exact name of the tab to import from.")]
+        public string TabName { get; set; }
 
         public GoogleSpreadsheetImportSettings()
         {
             Username = "";
             Password = "";
             SheetID = "";
+            TabName = "Sheet1";
         }
     }
 }

@@ -15,7 +15,7 @@ namespace CardGen
             var client = new DatabaseClient(settings.Username, settings.Password);
 
             var db = client.GetDatabase(settings.SheetID);
-            var t = db.GetTable<Card>("Sheet1");
+            var t = db.GetTable<Card>(settings.TabName);
             return t.FindAll().Select(d=>d.Element).ToList();
         }
     }
