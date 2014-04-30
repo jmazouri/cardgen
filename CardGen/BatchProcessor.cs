@@ -48,7 +48,14 @@ namespace CardGen
         {
             if (ImporterSelector.SelectedIndex == 0)
             {
-                ListOfCards = GoogleSpreadsheetImport.Import(GoogleSettings);
+                try
+                {
+                    ListOfCards = GoogleSpreadsheetImport.Import(GoogleSettings);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error in loading google spreadsheet: " + ex.Message);
+                }
             }
 
             CardList.Clear();
@@ -116,6 +123,6 @@ namespace CardGen
             }
         }
 
-        
+
     }
 }
