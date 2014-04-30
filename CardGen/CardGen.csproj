@@ -79,13 +79,13 @@
       <DependentUpon>BatchProcessor.cs</DependentUpon>
     </Compile>
     <Compile Include="Card.cs" />
-    <Compile Include="CardSettings.cs" />
+    <Compile Include="Template.cs" />
     <Compile Include="CardsheetGenerator.cs" />
-    <Compile Include="GeneratorForm.cs">
+    <Compile Include="TemplateCreator.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GeneratorForm.Designer.cs">
-      <DependentUpon>GeneratorForm.cs</DependentUpon>
+    <Compile Include="TemplateCreator.Designer.cs">
+      <DependentUpon>TemplateCreator.cs</DependentUpon>
     </Compile>
     <Compile Include="GoogleSpreadsheetImport.cs" />
     <Compile Include="GoogleSpreadsheetImportSettings.cs" />
@@ -101,8 +101,8 @@
     <EmbeddedResource Include="BatchProcessor.resx">
       <DependentUpon>BatchProcessor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GeneratorForm.resx">
-      <DependentUpon>GeneratorForm.cs</DependentUpon>
+    <EmbeddedResource Include="TemplateCreator.resx">
+      <DependentUpon>TemplateCreator.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -126,6 +126,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\CardGen\PropertyGridEx\PropertyGridEx.csproj">
+      <Project>{b0bb47f2-21c4-41fc-b6e6-40757adfc4a1}</Project>
+      <Name>PropertyGridEx</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

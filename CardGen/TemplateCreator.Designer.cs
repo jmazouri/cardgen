@@ -1,6 +1,6 @@
 ﻿namespace CardGen
 {
-    partial class GeneratorForm
+    partial class TemplateCreator
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TemplateCreator));
             this.CardPreview = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.CardName = new System.Windows.Forms.TextBox();
-            this.CardDesc = new System.Windows.Forms.TextBox();
-            this.ArtPath = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.BrowseArt = new System.Windows.Forms.Button();
-            this.BrowseOverlay = new System.Windows.Forms.Button();
-            this.OverlayPath = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,6 +45,8 @@
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.ArtPositionSelector = new CardGen.PositionSelector();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.propertyGridEx1 = new PropertyGridEx.PropertyGridEx();
             ((System.ComponentModel.ISupportInitialize)(this.CardPreview)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ArtPosX)).BeginInit();
@@ -62,100 +56,12 @@
             // 
             // CardPreview
             // 
-            this.CardPreview.Location = new System.Drawing.Point(346, 67);
+            this.CardPreview.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CardPreview.Location = new System.Drawing.Point(252, 27);
             this.CardPreview.Name = "CardPreview";
             this.CardPreview.Size = new System.Drawing.Size(180, 250);
             this.CardPreview.TabIndex = 0;
             this.CardPreview.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Card Title";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 144);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Description Text";
-            // 
-            // CardName
-            // 
-            this.CardName.Location = new System.Drawing.Point(15, 43);
-            this.CardName.Name = "CardName";
-            this.CardName.Size = new System.Drawing.Size(285, 20);
-            this.CardName.TabIndex = 3;
-            this.CardName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // CardDesc
-            // 
-            this.CardDesc.Location = new System.Drawing.Point(12, 160);
-            this.CardDesc.Multiline = true;
-            this.CardDesc.Name = "CardDesc";
-            this.CardDesc.Size = new System.Drawing.Size(198, 167);
-            this.CardDesc.TabIndex = 4;
-            this.CardDesc.TextChanged += new System.EventHandler(this.CardDesc_TextChanged);
-            // 
-            // ArtPath
-            // 
-            this.ArtPath.Location = new System.Drawing.Point(15, 82);
-            this.ArtPath.Name = "ArtPath";
-            this.ArtPath.Size = new System.Drawing.Size(285, 20);
-            this.ArtPath.TabIndex = 6;
-            this.ArtPath.TextChanged += new System.EventHandler(this.ArtPath_TextChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 66);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(20, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Art";
-            // 
-            // BrowseArt
-            // 
-            this.BrowseArt.Location = new System.Drawing.Point(306, 82);
-            this.BrowseArt.Name = "BrowseArt";
-            this.BrowseArt.Size = new System.Drawing.Size(30, 20);
-            this.BrowseArt.TabIndex = 7;
-            this.BrowseArt.Text = "...";
-            this.BrowseArt.UseVisualStyleBackColor = true;
-            this.BrowseArt.Click += new System.EventHandler(this.BrowseArt_Click);
-            // 
-            // BrowseOverlay
-            // 
-            this.BrowseOverlay.Location = new System.Drawing.Point(306, 121);
-            this.BrowseOverlay.Name = "BrowseOverlay";
-            this.BrowseOverlay.Size = new System.Drawing.Size(30, 20);
-            this.BrowseOverlay.TabIndex = 10;
-            this.BrowseOverlay.Text = "...";
-            this.BrowseOverlay.UseVisualStyleBackColor = true;
-            this.BrowseOverlay.Click += new System.EventHandler(this.BrowseOverlay_Click);
-            // 
-            // OverlayPath
-            // 
-            this.OverlayPath.Location = new System.Drawing.Point(15, 121);
-            this.OverlayPath.Name = "OverlayPath";
-            this.OverlayPath.Size = new System.Drawing.Size(285, 20);
-            this.OverlayPath.TabIndex = 9;
-            this.OverlayPath.TextChanged += new System.EventHandler(this.OverlayPath_TextChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 105);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Front Overlay";
             // 
             // menuStrip1
             // 
@@ -165,7 +71,7 @@
             this.toolsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(534, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(444, 24);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -221,7 +127,8 @@
             // 
             // ArtPosX
             // 
-            this.ArtPosX.Location = new System.Drawing.Point(198, 333);
+            this.ArtPosX.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ArtPosX.Location = new System.Drawing.Point(378, 312);
             this.ArtPosX.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -233,13 +140,14 @@
             0,
             -2147483648});
             this.ArtPosX.Name = "ArtPosX";
-            this.ArtPosX.Size = new System.Drawing.Size(40, 20);
+            this.ArtPosX.Size = new System.Drawing.Size(54, 20);
             this.ArtPosX.TabIndex = 13;
             this.ArtPosX.ValueChanged += new System.EventHandler(this.ArtPosX_ValueChanged);
             // 
             // ArtPosY
             // 
-            this.ArtPosY.Location = new System.Drawing.Point(249, 333);
+            this.ArtPosY.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ArtPosY.Location = new System.Drawing.Point(378, 286);
             this.ArtPosY.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -251,19 +159,20 @@
             0,
             -2147483648});
             this.ArtPosY.Name = "ArtPosY";
-            this.ArtPosY.Size = new System.Drawing.Size(40, 20);
+            this.ArtPosY.Size = new System.Drawing.Size(54, 20);
             this.ArtPosY.TabIndex = 14;
             this.ArtPosY.ValueChanged += new System.EventHandler(this.ArtPosY_ValueChanged);
             // 
             // ImageScale
             // 
+            this.ImageScale.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ImageScale.DecimalPlaces = 2;
             this.ImageScale.Increment = new decimal(new int[] {
             1,
             0,
             0,
             65536});
-            this.ImageScale.Location = new System.Drawing.Point(303, 333);
+            this.ImageScale.Location = new System.Drawing.Point(378, 338);
             this.ImageScale.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -275,7 +184,7 @@
             0,
             65536});
             this.ImageScale.Name = "ImageScale";
-            this.ImageScale.Size = new System.Drawing.Size(52, 20);
+            this.ImageScale.Size = new System.Drawing.Size(54, 20);
             this.ImageScale.TabIndex = 15;
             this.ImageScale.Value = new decimal(new int[] {
             1,
@@ -290,38 +199,93 @@
             // 
             // ArtPositionSelector
             // 
+            this.ArtPositionSelector.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ArtPositionSelector.ExactPosition = new System.Drawing.Point(100, 50);
             this.ArtPositionSelector.ImageSize = 1D;
-            this.ArtPositionSelector.Location = new System.Drawing.Point(216, 160);
+            this.ArtPositionSelector.Location = new System.Drawing.Point(252, 283);
             this.ArtPositionSelector.Name = "ArtPositionSelector";
             this.ArtPositionSelector.Size = new System.Drawing.Size(120, 167);
             this.ArtPositionSelector.TabIndex = 12;
             this.ArtPositionSelector.OnChange += new CardGen.PositionSelector.myDataChangedDelegate(this.ArtPositionSelector_OnChange);
             // 
-            // GeneratorForm
+            // listView1
+            // 
+            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listView1.Location = new System.Drawing.Point(12, 27);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(234, 250);
+            this.listView1.TabIndex = 16;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // propertyGridEx1
+            // 
+            this.propertyGridEx1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            // 
+            // 
+            // 
+            this.propertyGridEx1.DocCommentDescription.AccessibleName = "";
+            this.propertyGridEx1.DocCommentDescription.AutoEllipsis = true;
+            this.propertyGridEx1.DocCommentDescription.Cursor = System.Windows.Forms.Cursors.Default;
+            this.propertyGridEx1.DocCommentDescription.Location = new System.Drawing.Point(3, 18);
+            this.propertyGridEx1.DocCommentDescription.Name = "";
+            this.propertyGridEx1.DocCommentDescription.Size = new System.Drawing.Size(228, 37);
+            this.propertyGridEx1.DocCommentDescription.TabIndex = 1;
+            this.propertyGridEx1.DocCommentImage = null;
+            // 
+            // 
+            // 
+            this.propertyGridEx1.DocCommentTitle.Cursor = System.Windows.Forms.Cursors.Default;
+            this.propertyGridEx1.DocCommentTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.propertyGridEx1.DocCommentTitle.Location = new System.Drawing.Point(3, 3);
+            this.propertyGridEx1.DocCommentTitle.Name = "";
+            this.propertyGridEx1.DocCommentTitle.Size = new System.Drawing.Size(228, 15);
+            this.propertyGridEx1.DocCommentTitle.TabIndex = 0;
+            this.propertyGridEx1.DocCommentTitle.UseMnemonic = false;
+            this.propertyGridEx1.Location = new System.Drawing.Point(12, 283);
+            this.propertyGridEx1.Name = "propertyGridEx1";
+            this.propertyGridEx1.SelectedObject = ((object)(resources.GetObject("propertyGridEx1.SelectedObject")));
+            this.propertyGridEx1.ShowCustomProperties = true;
+            this.propertyGridEx1.Size = new System.Drawing.Size(234, 249);
+            this.propertyGridEx1.TabIndex = 17;
+            this.propertyGridEx1.ToolbarVisible = false;
+            // 
+            // 
+            // 
+            this.propertyGridEx1.ToolStrip.AccessibleName = "ToolBar";
+            this.propertyGridEx1.ToolStrip.AccessibleRole = System.Windows.Forms.AccessibleRole.ToolBar;
+            this.propertyGridEx1.ToolStrip.AllowMerge = false;
+            this.propertyGridEx1.ToolStrip.AutoSize = false;
+            this.propertyGridEx1.ToolStrip.CanOverflow = false;
+            this.propertyGridEx1.ToolStrip.Dock = System.Windows.Forms.DockStyle.None;
+            this.propertyGridEx1.ToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.propertyGridEx1.ToolStrip.Location = new System.Drawing.Point(0, 1);
+            this.propertyGridEx1.ToolStrip.Name = "";
+            this.propertyGridEx1.ToolStrip.Padding = new System.Windows.Forms.Padding(2, 0, 1, 0);
+            this.propertyGridEx1.ToolStrip.Size = new System.Drawing.Size(234, 25);
+            this.propertyGridEx1.ToolStrip.TabIndex = 1;
+            this.propertyGridEx1.ToolStrip.TabStop = true;
+            this.propertyGridEx1.ToolStrip.Text = "PropertyGridToolBar";
+            this.propertyGridEx1.ToolStrip.Visible = false;
+            // 
+            // TemplateCreator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(534, 367);
+            this.ClientSize = new System.Drawing.Size(444, 546);
+            this.Controls.Add(this.propertyGridEx1);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.ImageScale);
             this.Controls.Add(this.ArtPosY);
             this.Controls.Add(this.ArtPosX);
             this.Controls.Add(this.ArtPositionSelector);
-            this.Controls.Add(this.BrowseOverlay);
-            this.Controls.Add(this.OverlayPath);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.BrowseArt);
-            this.Controls.Add(this.ArtPath);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.CardDesc);
-            this.Controls.Add(this.CardName);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.CardPreview);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "GeneratorForm";
-            this.Text = "C9TD Card Generator";
+            this.Name = "TemplateCreator";
+            this.Text = "Template Creator";
             this.Load += new System.EventHandler(this.GeneratorForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.CardPreview)).EndInit();
             this.menuStrip1.ResumeLayout(false);
@@ -337,16 +301,6 @@
         #endregion
 
         private System.Windows.Forms.PictureBox CardPreview;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox CardName;
-        private System.Windows.Forms.TextBox CardDesc;
-        private System.Windows.Forms.TextBox ArtPath;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button BrowseArt;
-        private System.Windows.Forms.Button BrowseOverlay;
-        private System.Windows.Forms.TextBox OverlayPath;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private PositionSelector ArtPositionSelector;
@@ -361,6 +315,8 @@
         private System.Windows.Forms.ToolStripMenuItem batchToolStripMenuItem;
         private System.Windows.Forms.FontDialog fontDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.ListView listView1;
+        private PropertyGridEx.PropertyGridEx propertyGridEx1;
     }
 }
 

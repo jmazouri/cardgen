@@ -14,7 +14,7 @@ namespace CardGen
     {
         public Card CurCard = new Card();
         List<Card> ListOfCards = new List<Card>();
-        CardSettings CurSettings = new CardSettings();
+        Template CurSettings = new Template();
 
         GoogleSpreadsheetImportSettings GoogleSettings = new GoogleSpreadsheetImportSettings();
 
@@ -80,7 +80,7 @@ namespace CardGen
             if (fontDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 CurSettings.NameFont = fontDialog1.Font;
-                CurCard.Settings = CurSettings;
+                CurCard.Template = CurSettings;
                 CardPreview.Image = (Image)CurCard.FullCard;
             }
         }
@@ -92,7 +92,7 @@ namespace CardGen
             if (fontDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 CurSettings.DescriptionFont = fontDialog1.Font;
-                CurCard.Settings = CurSettings;
+                CurCard.Template = CurSettings;
                 CardPreview.Image = (Image)CurCard.FullCard;
             }
         }
@@ -111,7 +111,7 @@ namespace CardGen
                 FrontArtBox.Text = openFileDialog1.FileName;
 
                 CurSettings.Front = new Bitmap(FrontArtBox.Text);
-                CurCard.Settings = CurSettings;
+                CurCard.Template = CurSettings;
                 CardPreview.Image = (Image)CurCard.FullCard;
             }
         }

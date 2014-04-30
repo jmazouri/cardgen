@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace CardGen
 {
-    public class CardSettings
+    public class Template
     {
         public Font NameFont { get; set; }
         public Font DescriptionFont { get; set; }
         public Bitmap Front { get; set; }
 
-        public CardSettings()
+        public Template()
         {
             NameFont = new Font("Arial", 14);
             DescriptionFont = new Font("Arial", 12);

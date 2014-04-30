@@ -9,7 +9,7 @@ namespace CardGen
 {
     class CardsheetGenerator
     {
-        public static Bitmap GenerateSheet(List<Card> Cards, CardSettings Settings, int Width = 10)
+        public static Bitmap GenerateSheet(List<Card> Cards, Template Settings, int Width = 10)
         {
             if (!Cards.Any())
             {
@@ -27,7 +27,7 @@ namespace CardGen
             for (int i = 0; i < Cards.Count; i++)
             {
                 Card cur = Cards[i];
-                cur.Settings = Settings;
+                cur.Template = Settings;
 
                 int w = cur.FullCardSize.Width;
                 int h = cur.FullCardSize.Height;
